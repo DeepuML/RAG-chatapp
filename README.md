@@ -139,7 +139,7 @@ MIT License © 2025 Deepu
 
 ## 📬 Contact
 
-For feedback or collaboration, connect on  email at [mahakal123321@gmail.com.com](mailto:mahakal123321@gmail.com)
+For feedback or collaboration, connect on  email at [mahakal123321@gmail.com](mailto:mahakal123321@gmail.com)
 
 ---
 
