@@ -1,94 +1,146 @@
-**# 📚 EURI RAG Chatbot
+# 📚 EURI RAG Chatbot
 
-An advanced Retrieval-Augmented Generation (RAG) chatbot built with **Streamlit**, powered by **Euriai API** for both LLM responses and embeddings, and backed by **FAISS** vector search.
+![EURI Banner](https://i.imgur.com/TPxNkkV.png)
 
-This app allows:
-- 📂 Uploading multiple documents (`PDF`, `DOCX`, `TXT`)
-- 🔍 Indexing documents with custom embeddings
-- 🤖 Chatting with your own knowledge base
-- 💬 Storing chat history
-- ✨ Clean, modern Streamlit interface
+An elegant, modern Retrieval-Augmented Generation (**RAG**) chatbot built using **Streamlit**, powered by **Euriai API** for both LLM completions and custom embeddings, with document similarity search via **FAISS**. It brings the power of generative AI to your own documents.
+
+---
+
+## 🌟 Key Features
+
+✅ Upload and index multiple document types: **PDF, DOCX, TXT**
+🔍 Smart retrieval with **custom embeddings** (Euriai)
+🧠 Chat with your **own data** (Retrieval-QA chain)
+💬 Elegant **Streamlit-based UI** with large fonts & animations
+📜 **Chat history** saving and retrieval
+⚡ Blazing fast **FAISS** vector indexing
+
+---
+
+## 🎥 Demo Preview
+
+![Demo](https://media.giphy.com/media/xT5LMHxhOfscxPfIfm/giphy.gif)
 
 ---
 
 ## 🧠 Tech Stack
 
-- **Frontend:** Streamlit
-- **LLM & Embeddings:** [Euriai](https://euriai.ai)
-- **Vector Search:** FAISS
-- **File Parsing:** PyMuPDF, python-docx
-- **Environment Management:** `dotenv`
+| Component           | Tool/Library           |
+| ------------------- | ---------------------- |
+| UI Framework        | Streamlit              |
+| LLM & Embeddings    | Euriai API             |
+| Vector Store        | FAISS                  |
+| Document Parsing    | PyMuPDF, python-docx   |
+| State Management    | Streamlit SessionState |
+| Environment Secrets | Python-dotenv          |
 
 ---
 
-## 📂 Features
+## 📁 Folder Structure
 
-- 🗂️ **Multiple Document Upload**: PDF, DOCX, TXT supported
-- 📇 **FAISS Vector Indexing**
-- 🧠 **Euriai GPT-4.1-Nano** LLM integration
-- 💬 **Chat with Knowledge Base**
-- 💾 **Chat History Storage**
-- 🎨 **Prettified UI with larger fonts and styled components**
+```
+├── app.py                # Main Streamlit app
+├── faiss_index/          # Vector index directory
+├── uploads/              # Uploaded documents
+├── .env                  # API key securely stored here
+├── requirements.txt      # Dependencies
+└── README.md             # Project documentation
+```
 
 ---
 
-## ⚙️ Setup Instructions
+## 🚀 Getting Started
 
-### 1. Clone the Repository
+### 1️⃣ Clone the Repository
 
+```bash
 git clone https://github.com/your-username/euri-rag-chatbot.git
 cd euri-rag-chatbot
-**
+```
 
-2. Install Dependencies
-bash
-Copy
-Edit
+### 2️⃣ Install Dependencies
+
+```bash
 pip install -r requirements.txt
-3. Set Up .env
-Create a .env file:
+```
 
-bash
-Copy
-Edit
+### 3️⃣ Set Up Environment Variables
+
+Create a `.env` file:
+
+```bash
 touch .env
-And add your Euriai API key:
+```
 
-env
-Copy
-Edit
+Add your Euriai API key:
+
+```env
 EURI_API_KEY=your_actual_key_here
-Important: .env is already added to .gitignore.
+```
 
-4. Run the App
-bash
-Copy
-Edit
+### 4️⃣ Run the App
+
+```bash
 streamlit run app.py
-📎 File Upload Formats
-You can upload: .pdf , .docx, .txt
+```
 
-Uploaded documents will be parsed, embedded, indexed, and made available for chat.
+---
 
-🛡️ Security
+## 📂 Supported File Uploads
 
-API key is securely loaded from environment using dotenv.
+* ✅ `.pdf`
+* ✅ `.docx`
+* ✅ `.txt`
 
-.env file is excluded from Git.
+Uploaded documents will be automatically embedded and indexed via FAISS. You can upload files from the **left sidebar**.
 
-📈 Future Features (Optional Ideas)
+---
 
+## 🛡️ Security
 
-🧠 Conversational memory (history-aware answers)
+* API key is **loaded securely** via `.env` (not hard-coded)
+* `.env` is already in `.gitignore` to avoid GitHub leaks
 
-🔐 User login and session-based history
+---
 
-📤 Export chat history
+## 🧱 How It Works
 
-☁️ Deploy to Streamlit Cloud / Hugging Face Spaces
+1. Upload documents (PDF, DOCX, TXT)
+2. The app parses and chunks them
+3. Each chunk is embedded using Euriai's embedding API
+4. FAISS builds a vector index
+5. You ask a question → relevant docs are retrieved → passed to LLM
 
-🤝 Contributions
-PRs welcome! Please open issues first for major feature changes.
+![RAG Pipeline](https://i.imgur.com/GxF9sHa.png)
 
-📝 License
+---
+
+## 📈 Roadmap & Future Ideas
+
+* 🧠 Conversational memory (contextual chat)
+* 🔐 User authentication and access control
+* 📤 Chat export (PDF, Markdown)
+* ☁️ Streamlit Cloud or Hugging Face deployment
+* 📊 Upload analytics dashboard
+
+---
+
+## 🤝 Contributing
+
+Pull requests are welcome! If you want to add features or fix bugs, feel free to open an issue or submit a PR.
+
+---
+
+## 📝 License
+
 MIT License © 2025 Deepu
+
+---
+
+## 📬 Contact
+
+For feedback or collaboration, connect on [LinkedIn](https://www.linkedin.com/) or email at [yourname@example.com](mailto:yourname@example.com)
+
+---
+
+> *Built with ❤️ and Euriai by Deepu*
